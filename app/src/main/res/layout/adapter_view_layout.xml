@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="100"
+    android:background="@color/offgrey">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAlignment="center"
+        android:text="Current Day"
+        android:gravity="center"
+        android:layout_weight="33.3"
+        android:id="@+id/currentDay"
+        android:fontFamily="sans-serif"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAlignment="center"
+        android:text="Wind Speed"
+        android:gravity="center"
+        android:layout_weight="33.3"
+        android:id="@+id/windSpeed"
+        android:fontFamily="sans-serif"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textAlignment="center"
+        android:text="Min/Max Temps"
+        android:gravity="center"
+        android:layout_weight="33.3"
+        android:id="@+id/minMax"
+        android:fontFamily="sans-serif"
+        android:textSize="15sp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/main_background"
+    >
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:id="@+id/loadingSpinner" />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:id="@+id/enterAndSearchLayout">
+
+        <EditText
+            android:id="@+id/enterCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="80"
+            android:fontFamily="sans-serif"
+            android:hint="Enter a city"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_search_foreground"
+                android:id="@+id/searchButton"
+                android:clickable="true"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/mainDisplayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterAndSearchLayout"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/minMaxTemps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/todaysDate"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/minTempText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="110dp"
+                android:text="Min Temp: 5°C"
+
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/maxTempText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/minTempText"
+                android:text="Max Temp: 20°C"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/otherData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/minMaxTemps">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/windData"
+                style="@style/CardView.Dark"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/wind"
+                    app:tint="#FFFFFF" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Wind Speed"
+                    android:textColor="#FFFFFF"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:id="@+id/windText"
+                    android:text="5 MPH, NE"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+
+                    tools:ignore="RtlCompat" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardView.Dark"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_toRightOf="@id/windData">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sunset"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sunset Time"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:text="6:45AM"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/sunsetTime"
+
+                    tools:ignore="RtlCompat" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardView.Dark"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_toLeftOf="@id/windData">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/sunrise"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Sunrise Time"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sunriseTime"
+                    android:layout_gravity="bottom"
+                    android:text="6:45AM"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+
+                    tools:ignore="RtlCompat" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/todaysDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tempText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:fontFamily="sans-serif"
+            android:text="Tuesday, 2 December"
+            android:scrollHorizontally="true"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/cityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif"
+            android:text="Belfast, Northern Ireland"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tempText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cityText"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif"
+            android:text="°C"
+            android:textSize="70sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainDisplayLayout"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dayForecast"
+            android:text="8 Day Forecast"/>
+
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dayForecast"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>
